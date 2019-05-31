@@ -1,0 +1,41 @@
+<div [ngClass]="{'router-header': !isLogin  }">
+  <div class="shadow-sm p-3 mb bg-white ">
+    <div class="container">
+      <div class="row">
+
+        <div class="col">
+          <img class="logo" src="../../../assets/img/senai-logo-claro.png" alt="senaiLogo">
+        </div>
+
+        <div class="col">
+          <div class="title">
+            Banco de Itens Senai
+          </div>
+        </div>
+
+        <div class="col justify-items-flex-end">
+          <div *ngIf="!isLogin">
+            <div class="user">
+              <a class="user-name">
+                João da Silva
+                <i class="fas fa-sign-out-alt" id=user-name></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!isLogin">
+    <div class="container">
+      <div class="router-txt">
+        <a  routerLink="/home">
+          {{routerName}}
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+</div>

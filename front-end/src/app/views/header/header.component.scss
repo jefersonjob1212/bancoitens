@@ -1,0 +1,37 @@
+.title {
+  text-align: center;
+  font-size: 25px;
+  color: #299885;
+  font-family: roboto;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.logo {
+  align-self: center;
+}
+
+.router-header {
+  background-color: #299885;
+}
+
+.router-txt  a{
+  padding-top: 10px;
+  padding-bottom: 30px;
+  color: white;
+  font-style: italic;
+  font-family: roboto;
+  
+}
+
+.user {
+    text-align: end;
+    flex-direction: row;
+    align-items: flex-end;
+    margin-top: 15px;
+}
+
+#user-name{
+  font-size: 15px;
+  margin-left: 10px;
+}
