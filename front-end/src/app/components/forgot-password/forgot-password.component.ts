@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-forgot-password',
@@ -9,7 +10,7 @@ export class ForgotPasswordComponent implements OnInit {
 
   email:string;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -17,6 +18,7 @@ export class ForgotPasswordComponent implements OnInit {
   enviarEmail(){
     alert('Email Enviado Com Sucesso');
     this.email="";
+    this.router.navigate(['/']);
   }
 
 }
