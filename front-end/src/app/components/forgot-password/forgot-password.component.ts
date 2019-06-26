@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-forgot-password',
@@ -8,17 +9,23 @@ import { Router } from '@angular/router';
 })
 export class ForgotPasswordComponent implements OnInit {
 
-  email:string;
+  email: string;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private http: HttpClient) { }
 
   ngOnInit() {
   }
 
-  enviarEmail(){
-    alert('Email Enviado Com Sucesso');
-    this.email="";
-    this.router.navigate(['/']);
+  enviarEmail() {
+    if (this.email != undefined && this.email.includes('@') && this.email.includes('.com')) {
+      this.http.get('localhost:8000/sendMail?email' + this.email).then(res => {
+        this.email = "";
+        this.router.navigate(['/']);
+      });
+    }
+    else{
+      alert('Email Inválido!');
+    }
   }
 
 }
