@@ -4,12 +4,10 @@ const nodemailer = require('nodemailer');
 const app = express();
 
 const transporter = nodemailer.createTransport({
-    host: "smtp.google.com",
-    port: 465,
-    secure: true, // true for 465, false for other ports
+    service: 'gmail', // true for 465, false for other ports
     auth: {
-        user: "seuemail",
-        pass: "suasenha"
+        user: "jeferson.job.2610@gmail.com",
+        pass: "JefersonCarina1212"
     },
     tls: { rejectUnauthorized: false }
   });
@@ -28,7 +26,7 @@ app.get("/sendMail", (req, res) => {
         if (error) {
           return res.send(error);
         } else {
-            return res.send('Email enviado: ' + sendMail);
+            return res.send(info);
         }
       });
 });

@@ -18,8 +18,8 @@ export class ForgotPasswordComponent implements OnInit {
 
   enviarEmail() {
     if (this.email != undefined && this.email.includes('@') && this.email.includes('.com')) {
-      this.http.get('localhost:8000/sendMail?email' + this.email).then(res => {
-        this.email = "";
+      this.http.get('localhost:8000/sendMail?email' + this.email).subscribe(res => {
+        alert(res);
         this.router.navigate(['/']);
       });
     }
